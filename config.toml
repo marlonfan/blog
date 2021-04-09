@@ -33,7 +33,11 @@ disqusShortname = "marlonfan"
 #  extensions = ["joinLines"]
 
 [markup.goldmark.renderer]
-    unsafe= false
+  unsafe = false
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
 
 [Params]
   Introduce = "宁静致远"

@@ -7,9 +7,9 @@ tags: [express]
 
 **middleware**, express中几乎所有的东西都是通过中间件来完成的.大量采用第三方的中间件.但是它是怎样来工作的呢,让我们来一步一步揭开它.
 
-<!--more-->
-
 从代码上看上去第一眼就是`app.use()`了.在使用`express-generator`构建好一个express应用后,在`app.js`文件下可以看到以下代码。(因代码较多,有节选).
+
+<!--more-->
 
 ```javascript
 var express = require('express');
