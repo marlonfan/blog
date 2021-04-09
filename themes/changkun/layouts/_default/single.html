@@ -1,0 +1,45 @@
+{{ define "main_class"}}page-home{{ end}}
+{{ define "main_content" }}
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="{{ .Permalink }}" itemprop="url">
+        {{ .Title }}
+        </a>
+      </h1>
+      <div class="post-meta">
+      {{ if eq $.File.Dir "posts/" }}
+      {{ partial "post/date.html" .}} 
+      {{ partial "post/readtime.html" .}}
+      {{ partial "post/stat.html" .}}
+      {{ end }}
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    {{ .Content }}
+    </div>
+    <footer class="post-footer">
+      {{ partial "post/tags.html" .}}
+      {{ if eq $.File.Dir "posts/" }}
+      <ul class="post-copyright">
+        <li class="post-copyright-author">
+          <strong>Author:</strong> Marlon Fan
+        </li>
+        <li class="post-copyright-link">
+          <strong>Link:</strong>
+          <a href="{{ .Permalink }}">{{ .Permalink }}</a>
+        </li>
+        <li class="post-copyright-license">
+          <strong>License:</strong>
+          All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> unless stating additionally.
+        </li>
+      </ul>
+      {{ partial "post/prenext.html" .}}
+      {{ end }}
+
+      {{ partial "widgets/comment.html" .}}
+    </footer>
+  </article>
+</section>
+{{ end }}

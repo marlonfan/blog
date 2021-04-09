@@ -1,0 +1,106 @@
+# Copyright (c) 2020 Changkun Ou. All rights reserved.
+
+Title =  "无心阁"
+LanguageCode = "en-US"
+BaseUrl = "https://marlon.life"
+Theme =  "changkun"
+MetaDataFormat =  "yaml"
+CanonifyUrls =  true
+BuildDrafts =  false
+PaginatePath =  "p"
+Paginate = 5
+DisablePathToLower =  false
+HasCJKLanguage = true
+pygmentsUseClasses=true
+UglyUrls = false
+disqusShortname = "marlonfan"
+[permalinks]
+  posts = "/:year/:month/:day/:filename/"
+[markup.highlight]
+  anchorLineNos = false
+  codeFences = true
+  guessSyntax = true
+  hl_Lines = ""
+  lineAnchors = ""
+  lineNoStart = 1
+  lineNos = true
+  lineNumbersInTable = true
+  noClasses = true
+  style = "vs"
+  tabWidth = 4
+
+#[markup]
+#  defaultMarkdownHandler = "blackfriday"
+#[markup.blackfriday]
+#  extensions = ["joinLines"]
+
+[markup.goldmark.renderer]
+    unsafe= false
+
+[Params]
+  Introduce = "宁静致远"
+  Description = "Science | Art | Blog"
+  Keywords =  "Marlon Fan,Blog,Go,Art,Tech,Life,Notes,Reading,Think,Share"
+  Subtitle = "记录生活、技术中的二三事."
+  Imglogo = "/images/logo.png"
+  AuthorImg = "/images/logo.png"
+  DateFormat = "2006-01-02"
+  YearFormat = "2006 年"
+  MonthFormat = "01-02"
+  Fancybox = false
+
+[Author]
+  Name = "Marlon Fan"
+
+[[Menu.Main]]
+  Name = "Home"
+  Pre = "home"
+  URL = "/"
+  Weight = 1
+#[[Menu.Main]]
+#  Name = "Ideas"
+#  Pre = "lightbulb-o"
+#  URL = "/ideas/"
+#  Weight = 2
+[[Menu.Main]]
+  Name = "Archives"
+  Pre = "archive"
+  URL = "/posts/"
+  Weight = 3
+[[Menu.Main]]
+  Name = "Tags"
+  Pre = "tag"
+  URL = "/tags/"
+  Weight = 4
+[[Menu.Main]]
+  Name = "Bio"
+  Pre = "user"
+  URL = "/about/"
+  Weight = 5
+
+[[Params.Socials]]
+  Name = "Homepage"
+  Icon = "home"
+  URL = "https://marlon.life"
+
+[[Params.Socials]]
+  Name = "GitHub"
+  Icon = "github"
+  URL = "https://github.com/marlonfan"
+
+[[Params.Socials]]
+  Name = "Twitter"
+  Icon = "twitter"
+  URL = "https://twitter.com/marlonffan"
+
+[[Params.Socials]]
+  Name = "Zhihu"
+  Icon = "book"
+  URL = "https://www.zhihu.com/people/marlonfan"
+
+[[Params.Links]]
+  Name = "过往云烟"
+  Icon = "users"
+  URL = "https://www.liangtian.me/"
+
+# https://fontawesome.com/v4.7.0/icons/
