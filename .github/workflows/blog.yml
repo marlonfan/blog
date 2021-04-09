@@ -1,0 +1,24 @@
+name: Blog
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    name: Blog
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Blog
+      env:
+        USER: ${{ secrets.SERVER_USER }}
+        KEY: ${{ secrets.SERVER_KEY }}
+        DOMAIN: ${{ secrets.SERVER_DOMAIN }}
+      run: |
+        mkdir ~/.ssh
+        echo "$KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+        chmod 400 ~/.ssh/id_ed25519
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+        ssh-keyscan -H $DOMAIN >> ~/.ssh/known_hosts
+        ssh $USER@$DOMAIN "cd marlon.life/blog && git fetch && git rebase && make build && make up"
