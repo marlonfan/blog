@@ -16,6 +16,6 @@ func main() {
 	}
 
 	// Serve the contents over HTTP.
-	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(statikFS)))
-	http.ListenAndServe(":8080", nil)
+	http.Handle("/", http.StripPrefix("/", http.FileServer(statikFS)))
+	http.ListenAndServe(":3001", nil)
 }
