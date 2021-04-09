@@ -1,5 +1,5 @@
 Title =  "Marlon's Blog"
-LanguageCode = "en-US"
+LanguageCode = "zh-cn"
 BaseUrl = "https://marlon.life"
 Theme =  "changkun"
 MetaDataFormat =  "yaml"
