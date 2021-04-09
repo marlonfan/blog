@@ -35,10 +35,6 @@ disqusShortname = "marlonfan"
 [markup.goldmark.renderer]
   unsafe = false
 
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-
 [Params]
   Introduce = "宁静致远"
   Description = "Science | Art | Blog"
