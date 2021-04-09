@@ -7,11 +7,11 @@ tags: [golang]
 
 你好,今天我想分享一下,在``GO``语言中串联方法, 像中间件一样.
 
+<!--more-->
+
 在使用 GO 之前, 我使用 Nodejs + [ExpressJS](http://expressjs.com/en/4x/api.html) 去编写HTTP服务器应用. 这个框架提供了很简单的方法去使用中间件和拼接很多路由节点,因此,不必指定全部路由URL来为其添加处理程序.
 
 ![图1](https://cdn-images-1.medium.com/max/1600/1*HCztzuqe1E0yZN6_UqVb4A.png)
-
-<!--more-->
 
 这个想法是通过分割你的路由和处理每一个部分,拼接到处理器,每个处理程序只负责一部分. 它理解起来非常简单且非常容易使用和维护,所以首先我尝试在 GO 中做一些类似的事情.
 
