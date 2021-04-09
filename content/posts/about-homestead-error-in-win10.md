@@ -9,6 +9,8 @@ tags: [vagrant]
 
 非常感谢@Hoang
 
+<!--more-->
+
 ## 报错
 ```
 There was an error while executing `VBoxManage`, a CLI used by Vagrant
@@ -22,8 +24,6 @@ VBoxManage.exe: error: Failed to create the host-only adapter
 VBoxManage.exe: error: Code E_FAIL (0x80004005) - Unspecified error (extended info not available)
 VBoxManage.exe: error: Context: "int __cdecl handleCreate(struct HandlerArg *,int,int *)" at line 66 of file VBoxManageHostonly.cpp
 ```
-
-<!--more-->
 
 ## 解决方案
 
