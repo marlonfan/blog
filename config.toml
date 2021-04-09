@@ -1,6 +1,4 @@
-# Copyright (c) 2020 Changkun Ou. All rights reserved.
-
-Title =  "无心阁"
+Title =  "Marlon's Blog"
 LanguageCode = "en-US"
 BaseUrl = "https://marlon.life"
 Theme =  "changkun"
