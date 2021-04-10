@@ -64,7 +64,7 @@ EOF
 
 ## 最终效果
 
-![播放效果](marlon-storage.oss-cn-shenzhen.aliyuncs.com/uPic/darkmode.gif)
+![播放效果](https://marlon-storage.oss-cn-shenzhen.aliyuncs.com/uPic/darkmode.gif)
 
 
 ## 参考
