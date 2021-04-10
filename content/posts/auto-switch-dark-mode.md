@@ -61,6 +61,12 @@ EOF
 
 就万事大吉啦~
 
+
+## 最终效果
+
+![播放效果](marlon-storage.oss-cn-shenzhen.aliyuncs.com/uPic/darkmode.gif)
+
+
 ## 参考
 
 - [Automatic dark mode for terminal applications](https://arslan.io/2021/02/15/automatic-dark-mode-for-terminal-applications/)
