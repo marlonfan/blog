@@ -20,7 +20,7 @@ tags: [自动化]
 
 那么我们总结一下流程,其实是这个样子的:
 
-![2016-07-22_13:48:39.jpg](https://marlon-storage.oss-cn-shenzhen.aliyuncs.com/2019-05-03-140450.jpg)
+![2016-07-22_13:48:39.jpg](https://static.marlon.life/2019-05-03-140450.jpg)
 
 ## Runner的概念
 

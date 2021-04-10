@@ -32,7 +32,7 @@ vscode本身支持了设置:
 
 Goland 需要安装一个插件 ``Auto Dark Mode``, 然后在 ``Plugin`` 的设置中设置对应模式主题即可.
 
-![设置](https://tva1.sinaimg.cn/large/008eGmZEgy1gpe1svnnt5j31200u0wir.jpg)
+![设置](https://static.marlon.life/uPic/Z50cYI.jpg)
 
 ## Iterm2
 
@@ -64,7 +64,7 @@ EOF
 
 ## 最终效果
 
-![播放效果](https://marlon-storage.oss-cn-shenzhen.aliyuncs.com/uPic/darkmode.gif)
+![播放效果](https://static.marlon.life/uPic/darkmode.gif)
 
 
 ## 参考
