@@ -1,0 +1,44 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: blog
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: blog
+   template:
+      metadata:
+         labels:
+            app: blog
+      spec:
+         containers:
+            - name: blog
+              image: marlonfan/blog
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: blog
+   labels:
+      app: blog
+spec:
+   ports:
+      - port: 3001
+        name: blog
+   selector:
+      app: blog
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingressroutetls
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`k3s.marlon.life`)
+    kind: Rule
+    services:
+    - name: blog
+      port: 3001
