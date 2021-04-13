@@ -1,4 +1,13 @@
+ARG GO_VERSION
+ARG BASE_VERSION
+FROM golang:1.16.3 AS go-build
+WORKDIR /app
+COPY . .
+RUN go install github.com/gohugoio/hugo
+RUN hugo --minify
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o blog
+
 FROM alpine:latest
 LABEL maintainer="i@marlon.life"
-COPY blog /usr/local/bin
-ENTRYPOINT ["blog"]
+COPY --from=go-build /app/blog /app/
+ENTRYPOINT ["/app/blog"]
