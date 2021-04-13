@@ -1,9 +1,7 @@
-ARG GO_VERSION
-ARG BASE_VERSION
 FROM golang:1.16.3 AS go-build
 WORKDIR /app
 COPY . .
-RUN go install github.com/gohugoio/hugo
+RUN go install github.com/gohugoio/hugo@latest
 RUN hugo --minify
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o blog
 
