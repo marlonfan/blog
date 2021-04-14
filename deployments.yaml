@@ -17,6 +17,7 @@ spec:
          containers:
             - name: blog
               image: marlonfan/blog
+              imagePullPolicy: "Always"
 ---
 apiVersion: v1
 kind: Service
