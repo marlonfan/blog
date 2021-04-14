@@ -21,5 +21,5 @@ clean:
 	rm -rf resources public
 
 deploy:
-	sed -i "s/version: default/version: $(git rev-parse --short HEAD)/g" deployments.yaml
+	sed -i "s/version: default/version: $(VERSION)/g" deployments.yaml
 	kubectl apply -f deployments.yaml
