@@ -21,5 +21,8 @@ clean:
 	rm -rf resources public
 
 deploy:
+	git checkout --force
+	proxychains4 git fetch
+	git rebase
 	sed -i "s/version: default/version: $(git rev-parse --short HEAD)/g" deployments.yaml
 	kubectl apply -f deployments.yaml
