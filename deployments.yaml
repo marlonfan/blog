@@ -37,10 +37,14 @@ metadata:
   name: ingressroutetls
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
-  - match: Host(`k3s.marlon.life`)
+  - match: Host(`marlon.life`)
     kind: Rule
     services:
     - name: blog
       port: 3001
+  tls:
+    certResolver: letsencryptresolver
+    domains:
+      - main: "marlon.life"
