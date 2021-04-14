@@ -22,16 +22,16 @@ jobs:
       with:
         push: true
         tags: marlonfan/blog:latest
-    # - name: Build Blog
-    #   env:
-    #     USER: ${{ secrets.SERVER_USER }}
-    #     KEY: ${{ secrets.SERVER_KEY }}
-    #     DOMAIN: ${{ secrets.SERVER_DOMAIN }}
-    #   run: |
-    #     mkdir ~/.ssh
-    #     echo "$KEY" | tr -d '\r' > ~/.ssh/id_ed25519
-    #     chmod 400 ~/.ssh/id_ed25519
-    #     eval "$(ssh-agent -s)"
-    #     ssh-add ~/.ssh/id_ed25519
-    #     ssh-keyscan -H $DOMAIN >> ~/.ssh/known_hosts
-    #     ssh $USER@$DOMAIN "cd marlon.life/blog && proxychains4 git fetch && git rebase && kubectl apply -f deployments.yaml"
+    - name: Build Blog
+      env:
+        USER: ${{ secrets.SERVER_USER }}
+        KEY: ${{ secrets.SERVER_KEY }}
+        DOMAIN: ${{ secrets.SERVER_DOMAIN }}
+      run: |
+        mkdir ~/.ssh
+        echo "$KEY" | tr -d '\r' > ~/.ssh/id_ed25519
+        chmod 400 ~/.ssh/id_ed25519
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+        ssh-keyscan -H $DOMAIN >> ~/.ssh/known_hosts
+        ssh $USER@$DOMAIN "cd marlon.life/blog && proxychains4 git fetch && git rebase && make deploy"
