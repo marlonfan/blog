@@ -34,4 +34,4 @@ jobs:
         eval "$(ssh-agent -s)"
         ssh-add ~/.ssh/id_ed25519
         ssh-keyscan -H $DOMAIN >> ~/.ssh/known_hosts
-        ssh $USER@$DOMAIN "cd marlon.life/blog && make deploy"
+        ssh $USER@$DOMAIN "cd marlon.life/blog && git checkout --force && proxychains4 git fetch && git rebase && kubectl apply -f deployments.yaml"
