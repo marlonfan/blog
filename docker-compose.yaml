@@ -1,0 +1,18 @@
+version: '3'
+services:
+  blog:
+    image: marlonfan/blog:latest
+    restart: always
+    networks:
+      - proxy-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blog.rule=Host(`marlon.life`)"
+      - "traefik.http.routers.blog.entrypoints=websecure"
+      - "traefik.http.routers.blog.tls=true"
+      - "traefik.http.routers.blog.tls.certresolver=letsencryptresolver"
+      - "traefik.http.services.blog.loadbalancer.server.port=3001"
+
+networks:
+  proxy-net:
+    external: true
