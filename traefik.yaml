@@ -1,0 +1,36 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  chart: traefik
+  repo: https://containous.github.io/traefik-helm-chart
+  bootstrap: true
+  set:
+    image.tag: "2.3"
+  targetNamespace: kube-system
+  valuesContent: |-
+
+    additionalArguments:
+      - "--certificatesresolvers.letsencryptresolver.acme.tlschallenge"
+      - "--certificatesresolvers.letsencryptresolver.acme.email=i@marlon.life"
+      - "--certificatesresolvers.letsencryptresolver.acme.storage=/data/acme.json"
+      - "--entrypoints.web.http.redirections.entryPoint.to=:443"
+      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+      - "--accesslog=true"
+      - "--api"
+      - "--log.level=INFO"
+
+    persistence:
+      enabled: true
+      path: /data
+
+    podAnnotations:
+      prometheus.io/port: '8082'
+      prometheus.io/scrape: 'true'
+
+    # We will apply our own ingress rule for the dashboard in the next step
+    ingressRoute:
+      dashboard:
+        enabled: false
