@@ -1,4 +1,4 @@
-FROM marlonfan/golang:latest AS builder
+FROM golang:latest AS builder
 WORKDIR /app
 COPY . .
 RUN hugo --minify
