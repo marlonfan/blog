@@ -32,10 +32,6 @@ func main() {
 	}
 
 	r := http.NewServeMux()
-	r.HandleFunc("/root.txt", func(resp http.ResponseWriter, req *http.Request) {
-		resp.Write([]byte("b95a7a7638225f85ebfbfbcc69adc284"))
-		resp.Header().Set("Content-Type", "text/plain")
-	})
 
 	r.Handle("/", http.FileServer(http.FS(fsys)))
 
