@@ -2,6 +2,7 @@ FROM marlonfan/golang:latest AS builder
 WORKDIR /app
 COPY . .
 RUN hugo --minify
+COPY root.txt /app/public
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o blog
 
 FROM alpine:latest
