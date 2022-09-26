@@ -9,7 +9,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
       - "traefik.http.routers.blog.middlewares=redirect-to-https@docker"
-      - "traefik.http.routers.blog.rule=Host(`marlon.life`)"
+      - "traefik.http.routers.blog.rule=Host(`marlon.life`) || Host(`www.marlon.life`)"
       - "traefik.http.routers.blog.entrypoints=websecure"
       - "traefik.http.routers.blog.tls=true"
       - "traefik.http.routers.blog.tls.certresolver=letsencryptresolver"
