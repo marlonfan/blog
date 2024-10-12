@@ -1,6 +1,6 @@
 Title =  "Marlon's Blog"
 LanguageCode = "zh-cn"
-BaseUrl = "https://marlon.life"
+BaseUrl = "https://www.marlon.life"
 Theme =  "changkun"
 MetaDataFormat =  "yaml"
 CanonifyUrls =  true
@@ -79,7 +79,7 @@ disqusShortname = "marlonfan"
 [[Params.Socials]]
   Name = "Homepage"
   Icon = "home"
-  URL = "https://marlon.life"
+  URL = "https://www.marlon.life"
 
 [[Params.Socials]]
   Name = "GitHub"
