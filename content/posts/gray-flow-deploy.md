@@ -29,4 +29,4 @@ not implemented
 
 留坑, 待填
 
-![灰度方案跟进](https://static.marlon.life/uPic/6RAQ83.jpg)
+![灰度方案跟进](https://static.zhire.de/uPic/6RAQ83.jpg)
